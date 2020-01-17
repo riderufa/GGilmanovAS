@@ -1,0 +1,27 @@
+{% extends 'shelter/base_shelter.html' %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% load bootstrap4 %}
+
+{% block title %}
+Вход
+{% endblock %}
+
+{% block content %}
+<h2>Вход</h2>
+{% if user.is_authenticated %}
+<p>Вы уже выполнили вход.</p>
+{% else %}
+ 
+<form method="POST">
+    {% csrf_token %}
+    <!-- {{ form|crispy }} -->
+    {% bootstrap_form form %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <input class="btn btn-light" type="submit" value="Войти">
+</form>
+<a class="btn btn-light mt-2" href="register/">Зарегистрироваться</a>
+
+{% endif %}
+{% endblock %}

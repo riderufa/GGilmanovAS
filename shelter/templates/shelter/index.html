@@ -1,0 +1,21 @@
+{% extends 'shelter/base_shelter.html' %}
+
+{% block content %}
+
+
+
+  <div class="row row-cols-1 row-cols-md-4">
+    {% for animal in animals %}
+    <div class="col mb-4">
+      <div class="card shadow-lg" style="background-color: #e5dfd9;">
+        <img src="{% if animal.image %} {{ animal.image.url }} {% endif %}" class="card-img-top" alt="Здесь должна быть картинка">
+        <div class="card-body">
+          <h5 class="card-title">{{ animal.kindofanimal }} - {{ animal.name }}</h5>
+          <p class="card-text">{{ animal.description }}</p>
+          <a href="{% url 'animal_detail' animal.pk %}" class="btn btn-light">Подробно</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}

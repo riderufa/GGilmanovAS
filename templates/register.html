@@ -1,0 +1,20 @@
+{% extends 'shelter/base_shelter.html' %}
+
+<!-- {% load crispy_forms_tags %} -->
+{% load bootstrap4 %}
+
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+{% block content %}
+<form method="post">  
+    {% csrf_token %}  
+    <!-- {{ form.as_ul }}   -->
+    {% bootstrap_form form %}
+
+    <input type="hidden" name="next" value="{{ next }}">
+    <input class="btn btn-light" type="submit" value="Зарегистрироваться">  
+</form> 
+{% endblock %}

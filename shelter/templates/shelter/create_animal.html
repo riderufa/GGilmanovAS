@@ -1,0 +1,19 @@
+{% extends 'shelter/base_shelter.html' %}
+
+{% load bootstrap4 %}
+
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<form class="form-group" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- {{ form.as_p }} -->
+    {% bootstrap_form form %}
+    <!-- {{ form|crispy }} -->
+    <input class="btn btn-light" type="submit" value="Добавить">
+    <!-- {% buttons submit='Добавить' %}{% endbuttons %} -->
+</form>
+{% endblock %}

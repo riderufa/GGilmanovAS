@@ -1,0 +1,30 @@
+{% extends 'shelter/base_shelter.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters shadow-lg" style="background-color: #e5dfd9;">
+      <div class="col-md-4">
+        <img src="{% if animal.image %} {{ animal.image.url }} {% endif %}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h4 class="card-title">{{ animal.kindofanimal.title }}</h4>
+          <h5 class="card-title">Кличка: {{ animal.name }}</h5>
+          <p class="card-text">Цвет: {{ animal.color }}</p>
+          <p class="card-text">Возраст: {{ animal.age }}</p>
+          <p class="card-text">Порода: {{ animal.breed }}</p>
+          <p class="card-text">Описание: {{ animal.description }}</p>
+          <p class="card-text"><small class="text-muted"> Объявление создано: {{ animal.receipted }}</small></p>
+        </div>
+      </div>
+      <a class="btn btn-light m-2" href="{% url 'edit_animal' animal.pk %}">Редактировать</a>
+      <a class="btn btn-light m-2" href="{% url 'delete_animal' animal.pk %}">Удалить</a>
+    </div>
+  </div>
+
+
+{% endblock %}

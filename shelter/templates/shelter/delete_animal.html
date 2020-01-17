@@ -1,0 +1,14 @@
+{% extends 'shelter/base_shelter.html' %}
+
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<h2>Удаление животного {{ animal.kindofanimal }} по имени {{ animal.name }}</h2>
+<form method="POST">
+    {% csrf_token %}
+    <input class="btn btn-light" type="submit" value="Удалить">
+</form>
+{% endblock %}
