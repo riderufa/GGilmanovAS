@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['lit-sierra-67523.herokuapp.com']
+ALLOWED_HOSTS = ['dry-waters-96172.herokuapp.com']
 # ALLOWED_HOSTS = []
 
 
